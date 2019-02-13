@@ -215,16 +215,6 @@
             },
             "rules": [
               {
-                "metricTrigger": {
-                  "metricName": "CpuPercentage",
-                  "metricResourceUri": "[concat(resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                  "timeGrain": "PT1M",
-                  "statistic": "Average",
-                  "timeWindow": "PT10M",
-                  "timeAggregation": "Average",
-                  "operator": "GreaterThan",
-                  "threshold": 80.0
-                },
                 "scaleAction": {
                   "direction": "Increase",
                   "type": "ChangeCount",
@@ -233,16 +223,6 @@
                 }
               },
               {
-                "metricTrigger": {
-                  "metricName": "CpuPercentage",
-                  "metricResourceUri": "[concat(resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                  "timeGrain": "PT1M",
-                  "statistic": "Average",
-                  "timeWindow": "PT1H",
-                  "timeAggregation": "Average",
-                  "operator": "LessThan",
-                  "threshold": 60.0
-                },
                 "scaleAction": {
                   "direction": "Decrease",
                   "type": "ChangeCount",
